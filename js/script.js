@@ -1,23 +1,26 @@
 const buttonArray = document.querySelectorAll('.js-btn');
-let count = 0;
+let round = 0;
 const numberPlayer = document.getElementById('number-player');
+
 for (const button of buttonArray) {
     button.addEventListener('click', function () {
         this.setAttribute("disabled", "true");
-
-        this.classList.add(count % 2 === 0 ? 'button--cross' : 'button--circle');
-
-        count++;
-
-        // numberPlayer = count + 1 % 2;
         
-
-        console.log(getPlayerNumber (count));
-
+        this.classList.add(round % 2 === 0 ? 'button--cross' : 'button--circle');
+        
+        round++;
+        
+        numberPlayer.textContent = getPlayerNumber(round);
+        console.log(getPlayerNumber (round));
     });
 
 }
 
-function getPlayerNumber (count){
-return count % 2 + 1;
+/**
+ * get current player's number from game round.
+ * @param {number} round round's number
+ * @returns {number} player's number (1 or 2)
+ */
+function getPlayerNumber(round){
+return round % 2 + 1;
 }
