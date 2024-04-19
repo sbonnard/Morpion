@@ -4,13 +4,9 @@ let count = 0;
 for (const button of buttonArray) {
     button.addEventListener('click', function () {
         this.setAttribute("disabled", "true");
-        console.log(count, count % 2);
-        if(count % 2 === 0) {
-            this.classList.add('button--cross');    
-        }else {
-            this.classList.add('button--circle');    
-            
-        }
+
+        this.classList.add(count % 2 === 0 ? 'button--cross' : 'button--circle');
+
         count++;
     });
 }
