@@ -1,15 +1,7 @@
-const game = document.getElementById('game');
-const boxA1 = document.querySelector('#a1');
+const buttonArray = document.querySelectorAll('.button');
 
-console.log(boxA1);
-
-game.addEventListener('click', function(event){
-    // console.log(event.target);
-    // const box = event.target;
-    // box.style.backgroundColor = "red"
-
-});
-
-boxA1.addEventListener("click", function(event){
-    boxA1.classList.add('button--cross')
-})
+for (const button of buttonArray) {
+    button.addEventListener('click', function () {
+        button.classList.add('button--cross');
+    })
+}
