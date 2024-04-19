@@ -1,6 +1,15 @@
+const gameArray = [
+    [ 0, 0, 0],
+    [ 0, 0, 0],
+    [ 0, 0, 0]
+];
+
 const buttonArray = document.querySelectorAll('.js-btn');
 let round = 0;
 const numberPlayer = document.getElementById('number-player');
+
+let y = 0;
+let x = 0;
 
 for (const button of buttonArray) {
     button.addEventListener('click', function () {
@@ -11,7 +20,10 @@ for (const button of buttonArray) {
         round++;
 
         numberPlayer.textContent = getPlayerNumber(round);
+        gameArray[y][x] = getPlayerNumber(round);
         console.log(getPlayerNumber(round));
+
+        console.table(gameArray);
     });
 
 }
@@ -24,10 +36,4 @@ for (const button of buttonArray) {
 function getPlayerNumber(round) {
     return round % 2 + 1;
 }
-const gameArray = [
-    [ 0, 0, 0],
-    [ 0, 0, 0],
-    [ 0, 0, 0]
-]
 
-console.table(gameArray);
