@@ -5,13 +5,13 @@ const numberPlayer = document.getElementById('number-player');
 for (const button of buttonArray) {
     button.addEventListener('click', function () {
         this.setAttribute("disabled", "true");
-        
+
         this.classList.add(round % 2 === 0 ? 'button--cross' : 'button--circle');
-        
+
         round++;
-        
+
         numberPlayer.textContent = getPlayerNumber(round);
-        console.log(getPlayerNumber (round));
+        console.log(getPlayerNumber(round));
     });
 
 }
@@ -21,6 +21,13 @@ for (const button of buttonArray) {
  * @param {number} round round's number
  * @returns {number} player's number (1 or 2)
  */
-function getPlayerNumber(round){
-return round % 2 + 1;
+function getPlayerNumber(round) {
+    return round % 2 + 1;
 }
+const gameArray = [
+    [ 0, 0, 0],
+    [ 0, 0, 0],
+    [ 0, 0, 0]
+]
+
+console.table(gameArray);
