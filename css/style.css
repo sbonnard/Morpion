@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    font-size: 16px;
+}
+
 body,
 ul,
 h1,
@@ -26,12 +30,16 @@ ul {
 
 .game-board td {
     border: 1px solid black;
-    padding: 10px;
+    padding: 1rem;
     text-align: center;
-    width: 33%;
-    aspect-ratio: 1/1;
+    width: calc(100% / 3);
+    height: calc(100% / 3);
 }
 
 .game-board-symbol {
-    width: 100px;
+    width: 6.25rem;
+}
+
+.cross {
+    background-image: url(/img/cross-svgrepo-com.svg);
 }
