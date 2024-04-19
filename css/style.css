@@ -1,8 +1,32 @@
-.table{
-    border-collapse: collapse ;
-    width: 80%;
+* {
+    box-sizing: border-box;
 }
+
+body,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 80%;
+    aspect-ratio: 1/1;
+}
+
 .table td {
-    border : 1px solid black;
+    border: 1px solid black;
     padding: 10px;
+    text-align: center;
+
 }
