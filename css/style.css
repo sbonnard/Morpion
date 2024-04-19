@@ -18,13 +18,13 @@ ul {
     list-style: none;
 }
 
-.table {
+.game-board {
     border-collapse: collapse;
     width: 80%;
     aspect-ratio: 1/1;
 }
 
-.table td {
+.game-board td {
     border: 1px solid black;
     padding: 10px;
     text-align: center;
