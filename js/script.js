@@ -8,22 +8,22 @@ const buttonArray = document.querySelectorAll('.js-btn');
 let round = 0;
 const numberPlayer = document.getElementById('number-player');
 
-let y = 0;
-let x = 0;
-
 for (const button of buttonArray) {
+    
     button.addEventListener('click', function () {
         this.setAttribute("disabled", "true");
-
+        
         this.classList.add(round % 2 === 0 ? 'button--cross' : 'button--circle');
+        const position = getPosition(button);
 
-        round++;
-
-        numberPlayer.textContent = getPlayerNumber(round);
-        gameArray[y][x] = getPlayerNumber(round);
+        
+        gameArray[position[0]][position[1]] = getPlayerNumber(round);
         console.log(getPlayerNumber(round));
-
+        
+        round++;
+        numberPlayer.textContent = getPlayerNumber(round);
         console.table(gameArray);
+        
     });
 
 }
@@ -36,4 +36,12 @@ for (const button of buttonArray) {
 function getPlayerNumber(round) {
     return round % 2 + 1;
 }
+
+function getPosition (element) {
+    const positionArray = [];
+    positionArray.push(parseInt(element.dataset.y));
+    positionArray.push(parseInt(element.dataset.x));
+    return positionArray
+}
+
 
